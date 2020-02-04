@@ -1,0 +1,20 @@
+
+$enable-responsive-font-sizes:  true !important;
+
+$enable-gradients:  true !important;
+
+$theme-colors:(
+    lucassafadinho : rgba(108, 17, 192, 0.63),
+    joaofeijao : rgb(113, 5, 122),
+    educan : rgb(18, 88, 12),
+    kellycolorir : rgb(255, 6, 255)
+    
+);
+
+$lucassafadinho : "lucassafadinho";
+$joaofeijao : "joaofeijao";
+$educan : "educan";
+$kellycolorir : "kellycolorir";
+
+//IMPORTANTO O BOOTSTRAP
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
