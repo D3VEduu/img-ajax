@@ -5,7 +5,7 @@
     <title></title>
 
     <!-- POR ORDEM DE LINHAS: CSS - BOOTSTRAP - ICONES - JQUERY - POPPER - BOOSTRAP.JS -->
-    <link rel='stylesheet' href='style.css'>
+    <!-- <link rel='stylesheet' href='style.css'> -->
     <link rel='stylesheet' href='src/css/bootstrap.css'>
     <link rel='stylesheet' type='text/css' href='src/css/fontawesome-all.css'>
     <script src='src/jquery.js'></script>
@@ -40,17 +40,26 @@
 
             });
 
-            $("#dataImg").click(function() {
+            //JA TENTEI COM SELECT[NAME=DATAIMG]
+            $("#dataImg").trigger(function() {
                 let requisicao = "listar";
                 $.ajax({
                     url: 'http://localhost/img-ajax/server/webservice.php',
-                    method: 'GET',
+                    method: 'POST',
                     data: {
-                        'requisicao': 'requisicao'
+                        'requisicao': requisicao
                     },
                     success: function(retorno) {
-                        // let json = $.parseJSON(retorno);
-                        // alert("Os dados  retornados foram: " + json.nomeimg);
+                        let json = $.parseJSON(retorno);
+                        let qtd = json.length;
+                        //Percorrendo array
+                        for (var i = 0; i < qtd; i++) {
+                            let info = "";
+                            info += "<h5>Nome</h5>";
+                            info += json[i].nomeimg;
+                            info += "</br>";
+                            $("#dados").append(info);
+                        }
 
                     },
                     timeout: 3000,
@@ -84,7 +93,14 @@
         <p id="dados">
 
         </p>
-        <button id="dataImg">Clique</button>
+        <h5>Selecione o serviço</h5>
+        <select name="dataImg" id="dataImg">
+            <option value="lava">Lavagens</option>
+            <option value="poli">Polimento</option>
+            <option value="cris">Cristalização</option>
+            <option value="vitr">Vitrificação</option>
+            <option value="higi">Higienização</option>
+        </select>
     </div>
 </body>
 

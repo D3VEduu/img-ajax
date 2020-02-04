@@ -5,7 +5,7 @@ $conection = mysqli_connect('localhost', 'root', '', 'imgajax');
 mysqli_set_charset($conection, 'utf8');
 
 extract($_POST);
-$requisicao = $_GET['requisicao'];
+// $requisicao = $_GET['requisicao'];
 // $nomeimg = $_GET['nomeimg'];
 // $tipoimg = $_GET['tipoimg'];
 
