@@ -40,7 +40,7 @@
 
             });
 
-            //JA TENTEI COM SELECT[NAME=DATAIMG]
+            //JA TENTEI COM SELECT[NAME=DATAIMG] // FOI COM change()
             $("#dtImg").change(function() {
                 $("#dados").html("");
                 let requisicao = "listar";
@@ -70,10 +70,6 @@
                         alert('Erro!');
                     }
                 });
-            });
-
-            $("#slcDt").change(function() {
-                alert("Trigger ok!");
             });
         });
     </script>
