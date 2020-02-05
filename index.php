@@ -41,13 +41,16 @@
             });
 
             //JA TENTEI COM SELECT[NAME=DATAIMG]
-            $("#dataImg").trigger(function() {
+            $("#dtImg").change(function() {
+                $("#dados").html("");
                 let requisicao = "listar";
+                let imgCad = $("#dtImg").val();
                 $.ajax({
                     url: 'http://localhost/img-ajax/server/webservice.php',
                     method: 'POST',
                     data: {
-                        'requisicao': requisicao
+                        'requisicao': requisicao,
+                        'imgCad': imgCad
                     },
                     success: function(retorno) {
                         let json = $.parseJSON(retorno);
@@ -67,6 +70,10 @@
                         alert('Erro!');
                     }
                 });
+            });
+
+            $("#slcDt").change(function() {
+                alert("Trigger ok!");
             });
         });
     </script>
@@ -94,7 +101,7 @@
 
         </p>
         <h5>Selecione o serviço</h5>
-        <select name="dataImg" id="dataImg">
+        <select name="dtImg" id="dtImg">
             <option value="lava">Lavagens</option>
             <option value="poli">Polimento</option>
             <option value="cris">Cristalização</option>
