@@ -17,13 +17,41 @@ if ($requisicao == "cadastrar") {
                 echo "Erro";
         }
 } else if ($requisicao == "listar") {
-        if ($imgCad == "lava") {
-                $select = "SELECT * FROM imagens WHERE tipoimg LIKE '$imgCad'";
-                $consulta = mysqli_query($conection, $select);
-                $retorno = mysqli_fetch_all($consulta, MYSQLI_ASSOC);
-                $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
-                echo $json;
-        } else {
-                echo "Erro";
+        switch ($imgCad) {
+                case 'lav':
+                        $select = "SELECT * FROM imagens WHERE tipoimg LIKE 'lav'";
+                        $consulta = mysqli_query($conection, $select);
+                        $retorno = mysqli_fetch_all($consulta, MYSQLI_ASSOC);
+                        $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
+                        echo $json;
+                        break;
+                case 'pol':
+                        $select = "SELECT * FROM imagens WHERE tipoimg LIKE 'pol'";
+                        $consulta = mysqli_query($conection, $select);
+                        $retorno = mysqli_fetch_all($consulta, MYSQLI_ASSOC);
+                        $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
+                        echo $json;
+                        break;
+                case 'cri':
+                        $select = "SELECT * FROM imagens WHERE tipoimg LIKE 'cri'";
+                        $consulta = mysqli_query($conection, $select);
+                        $retorno = mysqli_fetch_all($consulta, MYSQLI_ASSOC);
+                        $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
+                        echo $json;
+                        break;
+                case 'vit':
+                        $select = "SELECT * FROM imagens WHERE tipoimg LIKE 'vit'";
+                        $consulta = mysqli_query($conection, $select);
+                        $retorno = mysqli_fetch_all($consulta, MYSQLI_ASSOC);
+                        $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
+                        echo $json;
+                        break;
+                case 'hig':
+                        $select = "SELECT * FROM imagens WHERE tipoimg LIKE 'vit'";
+                        $consulta = mysqli_query($conection, $select);
+                        $retorno = mysqli_fetch_all($consulta, MYSQLI_ASSOC);
+                        $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
+                        echo $json;
+                        break;
         }
 }

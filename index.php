@@ -98,11 +98,11 @@
         </p>
         <h5>Selecione o serviço</h5>
         <select name="dtImg" id="dtImg">
-            <option value="lava">Lavagens</option>
-            <option value="poli">Polimento</option>
-            <option value="cris">Cristalização</option>
-            <option value="vitr">Vitrificação</option>
-            <option value="higi">Higienização</option>
+            <option value="lav">Lavagens</option>
+            <option value="pol">Polimento</option>
+            <option value="cri">Cristalização</option>
+            <option value="vit">Vitrificação</option>
+            <option value="hig">Higienização</option>
         </select>
     </div>
 </body>
